@@ -28,17 +28,17 @@ const Navbar = () => {
           {isAuthenticated ? (
             <>
               <li>
-                <Link to="/complaints" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-full">
+                <Link to="/complaints" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
                   📝 Complaints
                 </Link>
               </li>
               <li>
-                <Link to="/leaderboard" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-full">
+                <Link to="/leaderboard" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
                   🏆 Leaderboard
                 </Link>
               </li>
               <li>
-                <Link to="/stats" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-full">
+                <Link to="/stats" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
                   📊 Stats
                 </Link>
               </li>

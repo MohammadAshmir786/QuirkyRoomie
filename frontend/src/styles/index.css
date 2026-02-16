@@ -213,10 +213,6 @@ a {
   transition: color 0.3s ease-in-out;
 }
 
-a:hover {
-  color: #4F46E5;
-}
-
 /* Responsive utilities */
 @media (max-width: 768px) {
   .hide-on-mobile {
