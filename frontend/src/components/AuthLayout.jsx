@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoMark from "../assets/quirkyroomie-mark.svg";
 
 const AuthLayout = ({
   title,
@@ -13,7 +14,11 @@ const AuthLayout = ({
       <div className="relative bg-white flex items-center w-1/3">
         <div className="bg-white rounded-3xl py-8 px-12 shadow-lg-custom border border-gray-200 animate-slideUp w-full m-12">
           <div className="text-center mb-8">
-            <div className="text-4xl mb-3">🏠</div>
+            <img
+              src={logoMark}
+              alt="QuirkyRoomie logo"
+              className="h-12 w-12 mx-auto mb-3"
+            />
             <h2 className="text-center font-bold text-3xl text-gray-900">
               {title}
             </h2>
@@ -55,9 +60,11 @@ const AuthLayout = ({
 
         <div className="relative z-10">
           <div className="flex items-center gap-3 group">
-            <div className="text-7xl transform group-hover:scale-110 transition duration-300">
-              🏠
-            </div>
+            <img
+              src={logoMark}
+              alt="QuirkyRoomie logo"
+              className="h-20 w-20 transform group-hover:scale-110 transition duration-300"
+            />
             <span className="text-6xl font-black bg-linear-to-r from-amber-200 via-orange-200 to-rose-200 bg-clip-text text-transparent">
               QuirkyRoomie
             </span>

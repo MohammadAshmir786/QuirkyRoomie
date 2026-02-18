@@ -1,6 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
+import logoMark from "../assets/quirkyroomie-mark.svg";
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -17,7 +18,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="text-2xl transform group-hover:scale-110 transition duration-300">🏠</div>
+          <img
+            src={logoMark}
+            alt="QuirkyRoomie logo"
+            className="h-9 w-9 transform group-hover:scale-110 transition duration-300"
+          />
           <span className="text-2xl font-bold bg-linear-to-r from-yellow-300 to-red-200 bg-clip-text text-transparent group-hover:from-yellow-200 group-hover:to-red-100 transition">
             QuirkyRoomie
           </span>
@@ -28,17 +33,26 @@ const Navbar = () => {
           {isAuthenticated ? (
             <>
               <li>
-                <Link to="/complaints" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
+                <Link
+                  to="/complaints"
+                  className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]"
+                >
                   📝 Complaints
                 </Link>
               </li>
               <li>
-                <Link to="/leaderboard" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
+                <Link
+                  to="/leaderboard"
+                  className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]"
+                >
                   🏆 Leaderboard
                 </Link>
               </li>
               <li>
-                <Link to="/stats" className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]">
+                <Link
+                  to="/stats"
+                  className="relative text-sm font-semibold text-white hover:text-yellow-300 transition duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:top-5 after:ms-6 after:bg-yellow-300 after:transition-all after:duration-300 hover:after:w-[75%]"
+                >
                   📊 Stats
                 </Link>
               </li>
@@ -48,7 +62,7 @@ const Navbar = () => {
                 </span>
               </li>
               <li>
-                <button 
+                <button
                   onClick={handleLogout}
                   className="px-5 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 shadow-medium hover:shadow-lg-custom"
                 >
@@ -59,12 +73,18 @@ const Navbar = () => {
           ) : (
             <>
               <li>
-                <Link to="/login" className="text-sm font-semibold text-white hover:text-yellow-300 transition duration-300">
+                <Link
+                  to="/login"
+                  className="text-sm font-semibold text-white hover:text-yellow-300 transition duration-300"
+                >
                   Login
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="px-5 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-yellow-100 transition transform hover:scale-105 shadow-medium hover:shadow-lg-custom">
+                <Link
+                  to="/register"
+                  className="px-5 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-yellow-100 transition transform hover:scale-105 shadow-medium hover:shadow-lg-custom"
+                >
                   Sign Up
                 </Link>
               </li>
@@ -73,11 +93,11 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-white text-2xl font-bold hover:text-yellow-300 transition"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? '✕' : '☰'}
+          {mobileMenuOpen ? "✕" : "☰"}
         </button>
       </div>
 
@@ -88,25 +108,36 @@ const Navbar = () => {
             {isAuthenticated ? (
               <>
                 <li>
-                  <Link to="/complaints" className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2">
+                  <Link
+                    to="/complaints"
+                    className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2"
+                  >
                     📝 Complaints
                   </Link>
                 </li>
                 <li>
-                  <Link to="/leaderboard" className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2">
+                  <Link
+                    to="/leaderboard"
+                    className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2"
+                  >
                     🏆 Leaderboard
                   </Link>
                 </li>
                 <li>
-                  <Link to="/stats" className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2">
+                  <Link
+                    to="/stats"
+                    className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2"
+                  >
                     📊 Stats
                   </Link>
                 </li>
                 <li>
-                  <span className="block text-sm font-semibold text-yellow-300 py-2">👤 {user?.username}</span>
+                  <span className="block text-sm font-semibold text-yellow-300 py-2">
+                    👤 {user?.username}
+                  </span>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={handleLogout}
                     className="w-full px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition"
                   >
@@ -117,12 +148,18 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                  <Link to="/login" className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2">
+                  <Link
+                    to="/login"
+                    className="block text-sm font-semibold text-white hover:text-yellow-300 transition py-2"
+                  >
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" className="block px-4 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-yellow-100 transition text-center">
+                  <Link
+                    to="/register"
+                    className="block px-4 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-yellow-100 transition text-center"
+                  >
                     Sign Up
                   </Link>
                 </li>
