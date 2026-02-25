@@ -77,7 +77,7 @@ const Login = () => {
 
     try {
       await login(email, password);
-      // navigate("/complaints");
+      navigate("/complaints");
     } catch (err) {
       setError(getLoginErrorMessage(err));
     } finally {

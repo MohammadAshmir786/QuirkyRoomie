@@ -100,7 +100,7 @@ const Register = () => {
         password,
         flatCode,
       );
-      // navigate("/complaints");
+      navigate("/complaints");
     } catch (err) {
       setError(getRegisterErrorMessage(err));
     } finally {
